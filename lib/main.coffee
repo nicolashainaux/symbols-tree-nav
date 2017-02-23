@@ -10,6 +10,10 @@ module.exports =
       type: 'boolean'
       default: true
       description: 'If this option is enabled then when you click the item in symbols-tree it will scroll to the destination gradually.'
+    collapsedByDefault:
+      type: 'boolean'
+      default: false
+      description: 'If this option is enabled then all collapsable elements will be collapsed anytime the tree view is displayed anew.'
     autoHide:
       type: 'boolean'
       default: false

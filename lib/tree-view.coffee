@@ -5,7 +5,8 @@ module.exports =
   TreeNode: class TreeNode extends View
     @content: ({label, icon, children}) ->
       if children
-        @li class: 'list-nested-item list-selectable-item', =>
+        collapsed = if atom.config.get('symbols-tree-view.collapsedByDefault') then " collapsed" else ""
+        @li class: "list-nested-item list-selectable-item#{collapsed}", =>
           @div class: 'list-item', =>
             @span class: "icon #{icon}", label
           @ul class: 'list-tree', =>
