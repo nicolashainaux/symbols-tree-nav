@@ -35,6 +35,10 @@ module.exports =
       type: 'boolean'
       default: true
       description: 'If this option is enabled, then icons will be displayed before each element.'
+    alternateCtagsBinary:
+      type: 'string'
+      description: 'Here you can specify a path to a binary to use for ctags creation instead of the one shipped with SymbolsTreeView. For instance, Linux users may want to install exuberant ctags and use it (/usr/bin/ctags). Caution, if the path you specify is wrong, SymbolsTreeView will not work.'
+      default: 'default'
 
 
   symbolsTreeView: null
