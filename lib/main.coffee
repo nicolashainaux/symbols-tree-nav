@@ -31,6 +31,10 @@ module.exports =
       type: 'number'
       description: 'Width of the panel (needs Atom restart)'
       default: 200
+    showIcons:
+      type: 'boolean'
+      default: true
+      description: 'If this option is enabled, then icons will be displayed before each element.'
 
 
   symbolsTreeView: null
