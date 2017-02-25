@@ -13,7 +13,7 @@ module.exports =
     collapsedByDefault:
       type: 'boolean'
       default: false
-      description: 'If this option is enabled then all collapsable elements will be collapsed anytime the tree view is displayed anew.'
+      description: 'If this option is enabled then all collapsable elements are displayed collapsed by default.'
     autoHide:
       type: 'boolean'
       default: false
@@ -35,9 +35,10 @@ module.exports =
       type: 'boolean'
       default: true
       description: 'If this option is enabled, then icons will be displayed before each element.'
-    alternateCtagsBinary:
+    zzAlternativeCtagsBinary:
+      title: 'AlternativeCtagsBinary'
       type: 'string'
-      description: 'Here you can specify a path to a binary to use for ctags creation instead of the one shipped with SymbolsTreeView. For instance, Linux users may want to install exuberant ctags and use it (/usr/bin/ctags). Caution, if the path you specify is wrong, SymbolsTreeView will not work.'
+      description: 'Here you can specify a path to a binary to use for ctags creation instead of the one shipped with symbols-tree-view. For instance, Linux users may want to install exuberant ctags and use it (/usr/bin/ctags). Caution, if the path you specify is wrong, symbols-tree-view will not work.'
       default: 'default'
 
 
