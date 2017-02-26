@@ -19,7 +19,7 @@ module.exports =
       @autoHideTypes = atom.config.get('symbols-tree-view.zAutoHideTypes')
 
       @treeView.onSelect ({node, item}) =>
-        if item.position.row >= 0 and editor = atom.workspace.getActiveTextEditor()
+        if item.position.row >= 0 and editor = atom.views.getView(textEditor)
           screenPosition = editor.screenPositionForBufferPosition(item.position)
           screenRange = new Range(screenPosition, screenPosition)
           {top, left, height, width} = editor.pixelRectForScreenRange(screenRange)
