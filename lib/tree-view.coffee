@@ -4,21 +4,6 @@
 module.exports =
   TreeNode: class TreeNode extends View
     @content: ({label, icon, children}) ->
-      highLightClass = ""
-      if atom.config.get('symbols-tree-view.colors')
-        [first, ..., language] = atom.workspace.getActiveTextEditor()?.getGrammar()?.scopeName.split "."
-        if icon?
-          [first, ..., syntaxCategory] = icon.split "-"
-        else
-          syntaxCategory = ''
-        if language in ['python', 'django'] and syntaxCategory == 'member'
-          syntaxCategory = 'function'
-        highLightClass = {
-          'function' : "syntax--entity syntax--name syntax--function syntax--#{language}"
-          'method'   : "syntax--entity syntax--name syntax--function syntax--#{language}"
-          'class'    : "syntax--entity syntax--name syntax--type syntax--class syntax--#{language}"
-          'variable' : "syntax--source syntax--#{language}"
-        }[syntaxCategory]
       iconClass = ""
       if atom.config.get('symbols-tree-view.showIcons')
         iconClass = "icon #{icon}"
@@ -26,13 +11,13 @@ module.exports =
         collapsed = if atom.config.get('symbols-tree-view.collapsedByDefault') then " collapsed" else ""
         @li class: "list-nested-item list-selectable-item#{collapsed}", =>
           @div class: 'list-item', =>
-            @span class: "#{iconClass} #{highLightClass}", label
+            @span class: iconClass, label
           @ul class: 'list-tree', =>
             for child in children
               @subview 'child', new TreeNode(child)
       else
         @li class: 'list-item list-selectable-item', =>
-          @span class: "#{iconClass} #{highLightClass}", label
+          @span class: iconClass, label
 
     initialize: (item) ->
       @emitter = new Emitter
