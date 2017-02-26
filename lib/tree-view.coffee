@@ -15,6 +15,7 @@ module.exports =
           syntaxCategory = 'function'
         highLightClass = {
           'function' : "syntax--entity syntax--name syntax--function syntax--#{language}"
+          'method'   : "syntax--entity syntax--name syntax--function syntax--#{language}"
           'class'    : "syntax--entity syntax--name syntax--type syntax--class syntax--#{language}"
           'variable' : "syntax--source syntax--#{language}"
         }[syntaxCategory]
