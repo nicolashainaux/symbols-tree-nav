@@ -19,20 +19,22 @@ module.exports =
       @autoHideTypes = atom.config.get('symbols-tree-view.zAutoHideTypes')
 
       @treeView.onSelect ({node, item}) =>
-        if item.position.row >= 0 and editor = atom.views.getView(textEditor)
+        if item.position.row >= 0 and editor = atom.workspace.getActiveTextEditor()
+          editorElt = atom.workspace.getActiveTextEditor().element
+          # atom.workspace.getActiveTextEditor() atom.views.getView(textEditor)
           screenPosition = editor.screenPositionForBufferPosition(item.position)
           screenRange = new Range(screenPosition, screenPosition)
-          {top, left, height, width} = editor.pixelRectForScreenRange(screenRange)
+          {top, left, height, width} = editorElt.pixelRectForScreenRange(screenRange)
           bottom = top + height
           desiredScrollCenter = top + height / 2
-          unless editor.getScrollTop() < desiredScrollCenter < editor.getScrollBottom()
-            desiredScrollTop =  desiredScrollCenter - editor.getHeight() / 2
+          unless editorElt.getScrollTop() < desiredScrollCenter < editorElt.getScrollBottom()
+            desiredScrollTop =  desiredScrollCenter - editorElt.getHeight() / 2
 
-          from = {top: editor.getScrollTop()}
+          from = {top: editorElt.getScrollTop()}
           to = {top: desiredScrollTop}
 
           step = (now) ->
-            editor.setScrollTop(now)
+            editorElt.setScrollTop(now)
 
           done = ->
             editor.scrollToBufferPosition(item.position, center: true)
