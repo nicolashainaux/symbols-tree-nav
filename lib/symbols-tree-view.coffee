@@ -20,21 +20,20 @@ module.exports =
 
       @treeView.onSelect ({node, item}) =>
         if item.position.row >= 0 and editor = atom.workspace.getActiveTextEditor()
-          editorElt = atom.workspace.getActiveTextEditor().element
           # atom.workspace.getActiveTextEditor() atom.views.getView(textEditor)
           screenPosition = editor.screenPositionForBufferPosition(item.position)
           screenRange = new Range(screenPosition, screenPosition)
-          {top, left, height, width} = editorElt.pixelRectForScreenRange(screenRange)
+          {top, left, height, width} = editor.element.pixelRectForScreenRange(screenRange)
           bottom = top + height
           desiredScrollCenter = top + height / 2
-          unless editorElt.getScrollTop() < desiredScrollCenter < editorElt.getScrollBottom()
-            desiredScrollTop =  desiredScrollCenter - editorElt.getHeight() / 2
+          unless editor.element.getScrollTop() < desiredScrollCenter < editor.element.getScrollBottom()
+            desiredScrollTop =  desiredScrollCenter - editor.element.getHeight() / 2
 
-          from = {top: editorElt.getScrollTop()}
+          from = {top: editor.element.getScrollTop()}
           to = {top: desiredScrollTop}
 
           step = (now) ->
-            editorElt.setScrollTop(now)
+            editor.element.setScrollTop(now)
 
           done = ->
             editor.scrollToBufferPosition(item.position, center: true)
