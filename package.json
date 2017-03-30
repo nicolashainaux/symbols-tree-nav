@@ -1,7 +1,7 @@
 {
-  "name": "symbols-tree-view-fix",
+  "name": "symbols-tree-nav",
   "main": "./lib/main",
-  "version": "0.13.3",
+  "version": "0.0.0",
   "description": "A symbols view like taglist",
   "repository": "https://github.com/nicolashainaux/symbols-tree-nav",
   "providedServices": {

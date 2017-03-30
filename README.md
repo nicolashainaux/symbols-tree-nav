@@ -1,13 +1,14 @@
-# symbols-tree-view-fix package
-
-Forked from https://atom.io/packages/symbols-tree-view. I am not the original author. Source code is the same, but will try to keep deprecation warnings fixed asap.
-Another forked package is available at https://atom.io/packages/symbols-tree-nav, what adds new options. May be more experimental!
-
-The rest of this README will remain untouched.
+# symbols-tree-nav package
 
 Symbols Tree View for Atom.io, just like taglist or tagbar for VIM.
 
 tag-generator.coffee comes from http://github.com/atom/symbols-view
+
+This is a fork from https://atom.io/packages/symbols-tree-view. I am not the original author. symbols-tree-nav only offers some more options, but be warned I am no coffee script expert, so they may be experimental! At least, I use this package and it works at home. PR are welcome! Also, new contributors are welcome.
+
+Another fork, with no extra options, but with fix for deprecations warnings is available at https://atom.io/packages/symbols-tree-view-fix.
+
+Rest of this README is so far same as original (but should be enhanced soon).
 
 ![screencast](https://raw.githubusercontent.com/xndcn/symbols-tree-view/master/screencast.gif?raw=true)
 
