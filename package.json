@@ -1,7 +1,7 @@
 {
   "name": "symbols-tree-nav",
   "main": "./lib/main",
-  "version": "0.13.2",
+  "version": "0.14.0",
   "description": "A symbols view like taglist (experimental fork from symbols-tree-view)",
   "repository": "https://github.com/nicolashainaux/symbols-tree-nav",
   "providedServices": {
