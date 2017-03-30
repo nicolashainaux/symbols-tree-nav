@@ -4,8 +4,9 @@
 module.exports =
   TreeNode: class TreeNode extends View
     @content: ({label, icon, children}) ->
-      highLightClass = ""
-      if atom.config.get('symbols-tree-view.colors')
+      highLightClass = ''
+      syntaxCategory = ''
+      if atom.config.get('symbols-tree-nav.colors')
         [first, ..., language] = atom.workspace.getActiveTextEditor()?.getGrammar()?.scopeName.split "."
         if icon?
           [first, ..., syntaxCategory] = icon.split "-"
