@@ -63,10 +63,10 @@ module.exports =
     generate: ->
       deferred = Q.defer()
       tags = []
-      if atom.config.get('symbols-tree-view.zzAlternativeCtagsBinary') == 'default'
+      if atom.config.get('symbols-tree-nav.zzAlternativeCtagsBinary') == 'default'
         command = path.resolve(__dirname, '..', 'vendor', "universal-ctags-#{process.platform}")
       else
-        command = path.resolve(atom.config.get('symbols-tree-view.zzAlternativeCtagsBinary'))
+        command = path.resolve(atom.config.get('symbols-tree-nav.zzAlternativeCtagsBinary'))
       defaultCtagsFile = require.resolve('./.ctags')
       args = ["--options=#{defaultCtagsFile}", '--fields=KsS']
 

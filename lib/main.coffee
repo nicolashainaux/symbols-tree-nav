@@ -1,11 +1,11 @@
-SymbolsTreeView = require './symbols-tree-view'
+SymbolsTreeNav = require './symbols-tree-nav'
 
 module.exports =
   config:
     autoToggle:
       type: 'boolean'
       default: false
-      description: 'If this option is enabled then symbols-tree-view will auto open when you open files.'
+      description: 'If this option is enabled then symbols-tree-nav will auto open when you open files.'
     scrollAnimation:
       type: 'boolean'
       default: true
@@ -17,7 +17,7 @@ module.exports =
     autoHide:
       type: 'boolean'
       default: false
-      description: 'If this option is enabled then symbols-tree-view is always hidden unless mouse hover over it.'
+      description: 'If this option is enabled then symbols-tree-nav is always hidden unless mouse hover over it.'
     zAutoHideTypes:
       title: 'AutoHideTypes'
       type: 'string'
@@ -38,40 +38,40 @@ module.exports =
     zzAlternativeCtagsBinary:
       title: 'AlternativeCtagsBinary'
       type: 'string'
-      description: 'Here you can specify a path to a binary to use for ctags creation instead of the one shipped with symbols-tree-view. For instance, Linux users may want to install exuberant ctags and use it (/usr/bin/ctags). Caution, if the path you specify is wrong, symbols-tree-view will not work.'
+      description: 'Here you can specify a path to a binary to use for ctags creation instead of the one shipped with symbols-tree-nav. For instance, Linux users may want to install exuberant ctags and use it (/usr/bin/ctags). Caution, if the path you specify is wrong, symbols-tree-nav will not work.'
       default: 'default'
 
 
-  symbolsTreeView: null
+  symbolsTreeNav: null
 
   activate: (state) ->
-    @symbolsTreeView = new SymbolsTreeView(state.symbolsTreeViewState)
-    atom.commands.add 'atom-workspace', 'symbols-tree-view:toggle': => @symbolsTreeView.toggle()
-    atom.commands.add 'atom-workspace', 'symbols-tree-view:show': => @symbolsTreeView.showView()
-    atom.commands.add 'atom-workspace', 'symbols-tree-view:hide': => @symbolsTreeView.hideView()
+    @symbolsTreeNav = new SymbolsTreeNav(state.symbolsTreeNavState)
+    atom.commands.add 'atom-workspace', 'symbols-tree-nav:toggle': => @symbolsTreeNav.toggle()
+    atom.commands.add 'atom-workspace', 'symbols-tree-nav:show': => @symbolsTreeNav.showView()
+    atom.commands.add 'atom-workspace', 'symbols-tree-nav:hide': => @symbolsTreeNav.hideView()
 
     atom.config.observe 'tree-view.showOnRightSide', (value) =>
-      if @symbolsTreeView.hasParent()
-        @symbolsTreeView.remove()
-        @symbolsTreeView.populate()
-        @symbolsTreeView.attach()
+      if @symbolsTreeNav.hasParent()
+        @symbolsTreeNav.remove()
+        @symbolsTreeNav.populate()
+        @symbolsTreeNav.attach()
 
-    atom.config.observe "symbols-tree-view.autoToggle", (enabled) =>
+    atom.config.observe "symbols-tree-nav.autoToggle", (enabled) =>
       if enabled
-        @symbolsTreeView.toggle() unless @symbolsTreeView.hasParent()
+        @symbolsTreeNav.toggle() unless @symbolsTreeNav.hasParent()
       else
-        @symbolsTreeView.toggle() if @symbolsTreeView.hasParent()
+        @symbolsTreeNav.toggle() if @symbolsTreeNav.hasParent()
 
   deactivate: ->
-    @symbolsTreeView.destroy()
+    @symbolsTreeNav.destroy()
 
   serialize: ->
-    symbolsTreeViewState: @symbolsTreeView.serialize()
+    symbolsTreeNavState: @symbolsTreeNav.serialize()
 
   getProvider: ->
-    view = @symbolsTreeView
+    view = @symbolsTreeNav
 
-    providerName: 'symbols-tree-view'
+    providerName: 'symbols-tree-nav'
     getSuggestionForWord: (textEditor, text, range) =>
       range: range
       callback: ()=>
