@@ -31,7 +31,11 @@ module.exports =
       type: 'number'
       description: 'Width of the panel (needs Atom restart)'
       default: 200
-    colors:
+    customColors:
+      type: 'boolean'
+      description: 'Colorize the entries with user-defined values'
+      default: false
+    colorsFromSyntaxTheme:
       type: 'boolean'
       description: 'Colorize the entries, matching syntax theme. (Yet experimental; only partial support)'
       default: false

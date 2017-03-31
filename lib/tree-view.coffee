@@ -6,14 +6,12 @@ module.exports =
     @content: ({label, icon, children}) ->
       highLightClass = ''
       syntaxCategory = ''
-      if atom.config.get('symbols-tree-nav.colors')
-        [first, ..., language] = atom.workspace.getActiveTextEditor()?.getGrammar()?.scopeName.split "."
-        if icon?
-          [first, ..., syntaxCategory] = icon.split "-"
-        else
-          syntaxCategory = ''
-        if language in ['python', 'django'] and syntaxCategory == 'member'
-          syntaxCategory = 'function'
+      [first, ..., language] = atom.workspace.getActiveTextEditor()?.getGrammar()?.scopeName.split "."
+      if icon?
+        [first, ..., syntaxCategory] = icon.split "-"
+      if language in ['python', 'django'] and syntaxCategory == 'member'
+        syntaxCategory = 'function'
+      if atom.config.get('symbols-tree-nav.colorsFromSyntaxTheme')
         highLightClass = {
           'function' : "syntax--entity syntax--name syntax--function syntax--#{language}"
           'method'   : "syntax--entity syntax--name syntax--function syntax--#{language}"
@@ -23,17 +21,21 @@ module.exports =
       iconClass = ""
       if atom.config.get('symbols-tree-nav.showIcons')
         iconClass = "icon #{icon}"
+      customColorClass = ""
+      if atom.config.get('symbols-tree-nav.customColors')
+        if syntaxCategory != ''
+            customColorClass = "custom-#{syntaxCategory}"
       if children
         collapsed = if atom.config.get('symbols-tree-nav.collapsedByDefault') then " collapsed" else ""
         @li class: "list-nested-item list-selectable-item#{collapsed}", =>
           @div class: 'list-item', =>
-            @span class: "#{iconClass} #{highLightClass}", label
+            @span class: "#{customColorClass} #{iconClass} #{highLightClass}", label
           @ul class: 'list-tree', =>
             for child in children
               @subview 'child', new TreeNode(child)
       else
         @li class: 'list-item list-selectable-item', =>
-          @span class: "#{iconClass} #{highLightClass}", label
+          @span class: "#{customColorClass} #{iconClass} #{highLightClass}", label
 
     initialize: (item) ->
       @emitter = new Emitter
