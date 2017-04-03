@@ -4,23 +4,47 @@ Symbols Tree View for Atom.io, just like taglist or tagbar for VIM.
 
 tag-generator.coffee comes from http://github.com/atom/symbols-view
 
+**Caution** If you want to try symbols-tree-nav, you must first disable symbols-tree-view, then install symbols-tree-nav. These two packages should not ne enabled in the same time (they use the same key bindings for instance...). When you want to get back to symbols-tree-view, just disable (or uninstall) symbols-tree-nav and then enable symbols-tree-view again.
+
 **Disclaimer** This is a fork from https://atom.io/packages/symbols-tree-view. I am not the original author. symbols-tree-nav only offers some more options, but be warned I am no coffee script expert, so they may be experimental! At least, I use this package and it works at home. PR are welcome! Also, new contributors are welcome.
+
+Whenever possible, I'll create a PR on symbols-tree-view to propose a new feature that is included in symbols-tree-nav.
 
 Another fork, without any extra options, but fixes for deprecations warnings, is available at https://atom.io/packages/symbols-tree-view-fix.
 
-Rest of this README is so far same as original (but should be enhanced in a next version).
+## Extra Settings
+The ones that are not in symbols-tree-view:
 
-![screencast](https://raw.githubusercontent.com/xndcn/symbols-tree-view/master/screencast.gif?raw=true)
+![alt tag](new_settings.png)
 
-## Settings
+* `Collapsed By Default` Self-explanatory (default=false)
 
-* `Auto Hide` If checked then symbols-tree-view is always hidden unless mouse hover over it. (default=false)
+* `Colors From Syntax Theme` If checked, symbols-tree-nav will try to colorize the entries based on the syntax theme you use. Depending on ctags parser results, this support may be incomplete. Do not hesitate to file an Issue and/or a PR to enhance the support. (default=false)
 
-* `Auto Toggle` If checked the symbols-tree-view is auto toggled on when you open files. (default=false)
+* `Custom Colors` If checked, symbols-tree-nav will use the colors defined in styles/symbols-tree-nav.less for entries when icons are hidden. See example below. These values should override the syntax theme colors. If you wish to share the same colors both when icons are shown or hidden, then just add these definitions on the same line. (default=false)
 
-* `Scroll Animation` If checked it will scroll to the destination gradually when you click the item in symbols-tree. (default=true)
 
-## TO DO
+    .symbols-tree-nav {
+      li.list-item {
+        .custom-function, .custom-method {
+          color: #61afef;
+        }
+      }
+    }
+
+* `Show Icons` Self explanatory. If you wish to change the colors, then add entries for `.icon-function`, `.icon-variable` etc. classes in your styles/symbols-tree-nav.less file. (default=true)
+
+* `AlternativeCtagsBinary` this one is a workaround intended for Linux users since the Linux Universal Ctags binary provided by symbols-tree-view seems to be a little bit buggy (python files are not correctly parsed, for instance). So you can check that another parser is installed on your system (like Exuberant Ctags) and provide its absolute path here. Leave default to keep using the provided binary. (default='default')
+
+## Extra Features (without settings)
+Here I'll try to keep an up-to-date list of the features that are proposed in symbols-tree-nav but not (yet?) in symbols-tree-view. Apart from the features already described in the Extra Settings section above.
+
+* Enhanced support for markdown files (from PR https://github.com/xndcn/symbols-tree-view/pull/138)
+
+* Partial support for R language
+
+
+## TO DO (yet unchanged)
 
 * Add specs for test
 
