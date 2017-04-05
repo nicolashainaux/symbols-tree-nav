@@ -11,18 +11,6 @@ module.exports =
         [first, ..., syntaxCategory] = icon.split "-"
       if language in ['python', 'django'] and syntaxCategory == 'member'
         syntaxCategory = 'function'
-      if language == 'r'
-        if syntaxCategory in ['globalVar', 'GlobalVars', 'functionVar', 'FunctionVariables']
-          syntaxCategory = 'variable'
-          icon = 'icon-variable'
-        else
-          if syntaxCategory == 'Functions'
-            syntaxCategory = 'function'
-            icon = 'icon-function'
-          else
-            if syntaxCategory in ['library', 'source']
-              syntaxCategory = 'namespace'
-              icon = 'icon-namespace'
       if atom.config.get('symbols-tree-nav.colorsFromSyntaxTheme')
         highLightClass = {
           'function' : "syntax--entity syntax--name syntax--function syntax--#{language}"
