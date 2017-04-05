@@ -50,4 +50,4 @@ Here I'll try to keep an up-to-date list of the features that are proposed in sy
 
 * Improve icons
 
-[new_settings_url]: https://raw.githubusercontent.com/nicolashainaux/symbols-tree-nav/master/new_settings.png?raw=true
+[new_settings_url]: https://github.com/nicolashainaux/symbols-tree-nav/blob/master/new_settings.png?raw=true
