@@ -15,8 +15,10 @@ module.exports =
         highLightClass = {
           'function' : "syntax--entity syntax--name syntax--function syntax--#{language}"
           'method'   : "syntax--entity syntax--name syntax--function syntax--#{language}"
+          'source'   : "syntax--entity syntax--name syntax--function syntax--#{language}"
           'class'    : "syntax--entity syntax--name syntax--type syntax--class syntax--#{language}"
           'variable' : "syntax--source syntax--#{language}"
+          'library'  : "syntax--keyword syntax--control syntax--import syntax--#{language}"
         }[syntaxCategory]
       iconClass = ""
       if atom.config.get('symbols-tree-nav.showIcons')

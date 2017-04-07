@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'symbol-icons';
-  src: url('atom://symbols-tree-nav/icons/icomoon.woff') format('woff');
+  src: url('atom://symbols-tree-nav/icons/symbol-icons.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -57,6 +57,7 @@
 @symbol-function: '\e903';
 @symbol-namespace:'\e907';
 @symbol-library:  '\e905';
+@symbol-source:   '\e90b';
 
 .symbol-icon(@name) {
   font-family: 'symbol-icons';
@@ -65,6 +66,14 @@
 
 .symbols-tree-nav .icon-function::before {
   .symbol-icon(symbol-function);
+}
+
+.symbols-tree-nav .icon-functionVar::before {
+  .symbol-icon(symbol-variable);
+}
+
+.symbols-tree-nav .icon-globalVar::before {
+  .symbol-icon(symbol-variable);
 }
 
 .symbols-tree-nav .icon-class::before {
@@ -77,6 +86,10 @@
 
 .symbols-tree-nav .icon-library::before {
   .symbol-icon(symbol-library);
+}
+
+.symbols-tree-nav .icon-source::before {
+  .symbol-icon(symbol-source);
 }
 
 .symbols-tree-nav .icon-struct::before {
