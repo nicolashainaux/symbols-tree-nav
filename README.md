@@ -41,7 +41,7 @@ Here I'll try to keep an up-to-date list of the features that are proposed in sy
 
 * Enhanced support for markdown files (from PR https://github.com/xndcn/symbols-tree-view/pull/138)
 
-* Partial support for R language
+* Support for R language
 
 
 ## TO DO (yet unchanged)
