@@ -137,10 +137,10 @@
 --langdef=R
 --langmap=R:.R.r
 --regex-R=/^[ \t]*"?([.A-Za-z][.A-Za-z0-9_]*)"?[ \t]*<-[ \t]function[ \t]*\(/\1/f,function/
---regex-R=/^.*library\(([.A-Za-z][.A-Za-z0-9_]*)\)/\1/f,namespace/
---regex-R=/^source\("([.A-Za-z][.A-Za-z0-9_]*)",*.*\)/\1/f,interface/
---regex-R=/^"?([.A-Za-z][.A-Za-z0-9_]*)"?[ \t]*<-[ \t][^\(]+$/\1/g,variable/
---regex-R=/[ \t]"?([.A-Za-z][.A-Za-z0-9_]*)"?[ \t]*<-[ \t][^\(]+$/\1/v,variable/
+--regex-R=/^.*library\(([.A-Za-z][.A-Za-z0-9_]*)\)/\1/l,library/
+--regex-R=/^source\(([.A-Za-z][.A-Za-z0-9_]*),*.*\)/\1/s,source/
+--regex-R=/^"?([.A-Za-z][.A-Za-z0-9_]*)"?[ \t]*<-[ \t][^\(]+$/\1/v,globalVar/
+--regex-R=/[ \t]"?([.A-Za-z][.A-Za-z0-9_]*)"?[ \t]*<-[ \t][^\(]+$/\1/v,functionVar/
 
 --langdef=Rust
 --langmap=Rust:.rs

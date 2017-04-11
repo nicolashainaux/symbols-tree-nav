@@ -46,16 +46,18 @@
   }
 }
 
-@symbol-class:    '\e600';
-@symbol-struct:   '\e601';
-@symbol-macro:    '\e602';
-@symbol-typedef:  '\e603';
-@symbol-union:    '\e604';
-@symbol-interface:'\e605';
-@symbol-enum:     '\e606';
-@symbol-variable: '\e607';
-@symbol-function: '\e608';
-@symbol-namespace:'\e609';
+@symbol-class:    '\e900';
+@symbol-struct:   '\e901';
+@symbol-macro:    '\e906';
+@symbol-typedef:  '\e908';
+@symbol-union:    '\e909';
+@symbol-interface:'\e904';
+@symbol-enum:     '\e902';
+@symbol-variable: '\e90a';
+@symbol-function: '\e903';
+@symbol-namespace:'\e907';
+@symbol-library:  '\e905';
+@symbol-source:   '\e90b';
 
 .symbol-icon(@name) {
   font-family: 'symbol-icons';
@@ -66,12 +68,28 @@
   .symbol-icon(symbol-function);
 }
 
+.symbols-tree-nav .icon-functionVar::before {
+  .symbol-icon(symbol-variable);
+}
+
+.symbols-tree-nav .icon-globalVar::before {
+  .symbol-icon(symbol-variable);
+}
+
 .symbols-tree-nav .icon-class::before {
   .symbol-icon(symbol-class);
 }
 
 .symbols-tree-nav .icon-namespace::before {
   .symbol-icon(symbol-namespace);
+}
+
+.symbols-tree-nav .icon-library::before {
+  .symbol-icon(symbol-library);
+}
+
+.symbols-tree-nav .icon-source::before {
+  .symbol-icon(symbol-source);
 }
 
 .symbols-tree-nav .icon-struct::before {
