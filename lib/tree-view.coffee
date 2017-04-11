@@ -12,12 +12,13 @@ module.exports =
       if language in ['python', 'django'] and syntaxCategory == 'member'
         syntaxCategory = 'function'
       if atom.config.get('symbols-tree-nav.colorsFromSyntaxTheme')
-        highLightClass = {
-          'function' : "syntax--entity syntax--name syntax--function syntax--#{language}"
-          'method'   : "syntax--entity syntax--name syntax--function syntax--#{language}"
-          'class'    : "syntax--entity syntax--name syntax--type syntax--class syntax--#{language}"
-          'variable' : "syntax--source syntax--#{language}"
-        }[syntaxCategory]
+        if syntaxCategory in ['function', 'method', 'class', 'variable']
+          highLightClass = {
+            'function' : "syntax--entity syntax--name syntax--function syntax--#{language}"
+            'method'   : "syntax--entity syntax--name syntax--function syntax--#{language}"
+            'class'    : "syntax--entity syntax--name syntax--type syntax--class syntax--#{language}"
+            'variable' : "syntax--source syntax--#{language}"
+          }[syntaxCategory]
       iconClass = ""
       if atom.config.get('symbols-tree-nav.showIcons')
         iconClass = "icon #{icon}"
