@@ -43,7 +43,7 @@ Here I'll try to keep an up-to-date list of the features that are proposed in sy
 
 * Enhanced support for markdown files (from PR https://github.com/xndcn/symbols-tree-view/pull/138)
 
-* Support for R language
+* Support for several languages: R, Elixir, taskpaper, Fountain, Julia, LaTeX
 
 * Bugfix: #148 (from PR https://github.com/xndcn/symbols-tree-view/pull/160)
 
