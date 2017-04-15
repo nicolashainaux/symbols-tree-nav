@@ -43,6 +43,10 @@ module.exports =
       type: 'boolean'
       default: true
       description: 'If this option is enabled, then icons will be displayed before each element.'
+    showIconsExceptions:
+      type: 'string'
+      description: 'Here you can specify a list of scopes (ex: gfm python r). If Show Icons is on, then icons will not be displayed for the specified scopes; if Show Icons is off, then icons will be displayed only for the specified scopes. Default value will not affect any scope.'
+      default: 'default'
     zzAlternativeCtagsBinary:
       title: 'AlternativeCtagsBinary'
       type: 'string'

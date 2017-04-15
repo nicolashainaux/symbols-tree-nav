@@ -34,6 +34,8 @@ The ones that are not in symbols-tree-view:
 
 * `Show Icons` Self explanatory. If you wish to change the colors, then add entries for `.icon-function`, `.icon-variable` etc. classes in your styles/symbols-tree-nav.less file. (default=true)
 
+* `Show Icons Exceptions` A list of scopes (ex: "python gfm r") what be will the exceptions to the main rule of Show Icons. If you let the default value, nothing special will happen. If you turn Show Icons on, then icons will be displayed in all files except the ones matching this scopes' list. If Show Icons is off, then icons will be displayed only in the files matching this scopes' list.
+
 * `AlternativeCtagsBinary` this one is a workaround intended for Linux users since the Linux Universal Ctags binary provided by symbols-tree-view seems to be a little bit buggy (python files are not correctly parsed, for instance). So you can check that another parser is installed on your system (like Exuberant Ctags) and provide its absolute path here. Leave default to keep using the provided binary. (default='default')
 
 ## Extra Features (without settings)

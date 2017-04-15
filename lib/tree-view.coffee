@@ -6,6 +6,7 @@ module.exports =
     @content: ({label, icon, children}) ->
       highLightClass = ''
       syntaxCategory = ''
+      showIconsExceptions = atom.config.get('symbols-tree-nav.showIconsExceptions').split " "
       [first, ..., language] = atom.workspace.getActiveTextEditor()?.getGrammar()?.scopeName.split "."
       if icon?
         [first, ..., syntaxCategory] = icon.split "-"
@@ -23,7 +24,11 @@ module.exports =
           }[syntaxCategory]
       iconClass = ""
       if atom.config.get('symbols-tree-nav.showIcons')
-        iconClass = "icon #{icon}"
+        if language not in showIconsExceptions
+          iconClass = "icon #{icon}"
+      else
+        if language in showIconsExceptions
+          iconClass = "icon #{icon}"
       customColorClass = ""
       if atom.config.get('symbols-tree-nav.customColors')
         if syntaxCategory != ''
