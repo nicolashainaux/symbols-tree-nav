@@ -7,7 +7,11 @@ module.exports =
       highLightClass = ''
       syntaxCategory = ''
       showIconsExceptions = atom.config.get('symbols-tree-nav.showIconsExceptions').split " "
-      [first, ..., language] = atom.workspace.getActiveTextEditor()?.getGrammar()?.scopeName.split "."
+      scopeName = atom.workspace.getActiveTextEditor()?.getGrammar()?.scopeName
+      if scopeName?
+        [first, ..., language] = scopeName.split "."
+      else
+        language = undefined
       if icon?
         [first, ..., syntaxCategory] = icon.split "-"
       if language in ['python', 'django'] and syntaxCategory == 'member'
