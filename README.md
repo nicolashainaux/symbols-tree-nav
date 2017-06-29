@@ -32,6 +32,8 @@ The ones that are not in symbols-tree-view:
       }
     }
 
+* `Min Titles Length` This is a workaround to be able to see long names that are cut at right. This value is a natural number. When the mouse hover over any element whose length is greater or equal to this value, it will display the complete name as a title. Set it to 0 or 1 to see a title when hovering over any element, or choose the value that's right for your needs. Set it to -1 (default value) to disable this option.
+
 * `Show Icons` Self explanatory. If you wish to change the colors, then add entries for `.icon-function`, `.icon-variable` etc. classes in your styles/symbols-tree-nav.less file. (default=true)
 
 * `Show Icons Exceptions` A list of scopes (ex: "python gfm r") what be will the exceptions to the main rule of Show Icons. If you let the default value, nothing special will happen. If you turn Show Icons on, then icons will be displayed in all files except the ones matching this scopes' list. If Show Icons is off, then icons will be displayed only in the files matching this scopes' list.

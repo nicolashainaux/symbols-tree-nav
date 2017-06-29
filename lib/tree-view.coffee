@@ -37,16 +37,18 @@ module.exports =
       if atom.config.get('symbols-tree-nav.customColors')
         if syntaxCategory != ''
             customColorClass = "custom-#{syntaxCategory}"
+      minTitlesLength = atom.config.get('symbols-tree-nav.minTitlesLength')
+      itemTitle = if minTitlesLength != -1 and label.length >= minTitlesLength then label else ''
       if children
         collapsed = if atom.config.get('symbols-tree-nav.collapsedByDefault') then " collapsed" else ""
-        @li class: "list-nested-item list-selectable-item#{collapsed}", =>
+        @li class: "list-nested-item list-selectable-item#{collapsed}", title: itemTitle, =>
           @div class: 'list-item', =>
             @span class: "#{customColorClass} #{iconClass} #{highLightClass}", label
           @ul class: 'list-tree', =>
             for child in children
               @subview 'child', new TreeNode(child)
       else
-        @li class: 'list-item list-selectable-item', =>
+        @li class: 'list-item list-selectable-item', title: itemTitle, =>
           @span class: "#{customColorClass} #{iconClass} #{highLightClass}", label
 
     initialize: (item) ->

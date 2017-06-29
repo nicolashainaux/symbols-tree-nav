@@ -14,6 +14,10 @@ module.exports =
       type: 'boolean'
       default: false
       description: 'If this option is enabled then all collapsable elements are displayed collapsed by default.'
+    minTitlesLength:
+      type: 'number'
+      default: -1
+      description: 'Any element having a length greater or equal to this value will display a title when mouse hover over it. Default -1 value means that titles will never be displayed.'
     autoHide:
       type: 'boolean'
       default: false
