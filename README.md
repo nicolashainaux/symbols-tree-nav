@@ -2,15 +2,15 @@
 
 Symbols Tree View for Atom.io, just like taglist or tagbar for VIM.
 
-tag-generator.coffee comes from http://github.com/atom/symbols-view
+tag-generator.coffee comes from [atom/symbols-view](http://github.com/atom/symbols-view).
 
 **Caution** If you want to try symbols-tree-nav, you must first disable symbols-tree-view, then install symbols-tree-nav. These two packages should not ne enabled in the same time (they use the same key bindings for instance...). When you want to get back to symbols-tree-view, just disable (or uninstall) symbols-tree-nav and then enable symbols-tree-view again.
 
-**Disclaimer** This is a fork from https://atom.io/packages/symbols-tree-view. I am not the original author. symbols-tree-nav only offers some more options, but be warned I am no coffee script expert, so they may be experimental! At least, I use this package and it works at home. PR are welcome! Also, new contributors are welcome.
+**Disclaimer** This is a fork from [symbols-tree-view](https://atom.io/packages/symbols-tree-view). I am not the original author. symbols-tree-nav only offers some more options, but be warned I am no coffee script expert, so they may be experimental! At least, I use this package and it works at home. PR are welcome! Also, new contributors are welcome.
 
 Whenever possible, I'll create a PR on symbols-tree-view to propose a new feature that is included in symbols-tree-nav.
 
-Another fork, without any extra options, but fixes for deprecations warnings, is available at https://atom.io/packages/symbols-tree-view-fix.
+[symbols-tree-view-fix](https://atom.io/packages/symbols-tree-view-fix) is another fork, without any extra options, but fixes for deprecations warnings.
 
 ## Extra Settings
 The ones that are not in symbols-tree-view:
@@ -32,7 +32,7 @@ The ones that are not in symbols-tree-view:
       }
     }
 
-* `Min Titles Length` This is a workaround to be able to see long names that are cut at right. This value is a natural number. When the mouse hover over any element whose length is greater or equal to this value, it will display the complete name as a title. Set it to 0 or 1 to see a title when hovering over any element, or choose the value that's right for your needs. Set it to -1 (default value) to disable this option.
+* `Min Titles Length` This is a workaround to be able to see long names that are cut at right. This value is a natural number. When the mouse hover over any element whose length is greater or equal to this value, it will display the complete name as a title. Set it to 0 or 1 to see a title when hovering over any element, or choose the value that's right for your needs. Set it to -1 (default value) to disable this option. (Ref.: [issue #8](https://github.com/nicolashainaux/symbols-tree-nav/issues/8))
 
 * `Show Icons` Self explanatory. If you wish to change the colors, then add entries for `.icon-function`, `.icon-variable` etc. classes in your styles/symbols-tree-nav.less file. (default=true)
 
@@ -43,13 +43,13 @@ The ones that are not in symbols-tree-view:
 ## Extra Features (without settings)
 Here I'll try to keep an up-to-date list of the features that are proposed in symbols-tree-nav but not (yet?) in symbols-tree-view. Apart from the features already described in the Extra Settings section above.
 
-* Enhanced support for markdown files (from PR https://github.com/xndcn/symbols-tree-view/pull/138)
+* Enhanced support for markdown files (from [symbols-tree-view PR #138](https://github.com/xndcn/symbols-tree-view/pull/138))
 
 * Support for several languages: R, Elixir, taskpaper, Fountain, Julia, LaTeX
 
-* Bugfix: #148 (from PR https://github.com/xndcn/symbols-tree-view/pull/160)
+* Bugfix: #148 (from [symbols-tree-view PR #160](https://github.com/xndcn/symbols-tree-view/pull/160))
 
-* Bugfix: #79 (from PR https://github.com/xndcn/symbols-tree-view/pull/172)
+* Bugfix: #79 (from [symbols-tree-view PR #172](https://github.com/xndcn/symbols-tree-view/pull/172))
 
 
 ## TO DO (yet unchanged)
