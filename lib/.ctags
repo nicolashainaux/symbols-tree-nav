@@ -22,7 +22,9 @@
 --langdef=Yaml
 --langmap=Yaml:.yaml
 --langmap=Yaml:+.yml
---regex-Yaml=/^[ \t]*([a-zA-Z_0-9 ]+)[ \t]*\:[ \t]*/\1/f,function/
+--regex-Yaml=/^  (\- [a-zA-Z_0-9]+)[ \t]*\:[ \t]*/\1/f,function/{scope=ref}
+--regex-Yaml=/^  ([a-zA-Z_0-9]+)[ \t]*\:[ \t]*/\1/f,function/{scope=ref}
+--regex-Yaml=/^([a-zA-Z_0-9]+[a-zA-Z_0-9 ]+)[ \t]*\:[ \t]*/\1/c,class/{scope=set}
 
 --regex-Html=/^[ \t]*<([a-zA-Z]+)[ \t]*.*id="([^"]+)".*>/\1#\2/m,member\tclass:id/
 --regex-Html=/^[ \t]*<([a-zA-Z]+)[ \t]*.*class="([^"]+)".*>/\1.\2/m,member\tclass:class/
