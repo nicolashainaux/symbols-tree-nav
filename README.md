@@ -45,7 +45,7 @@ Here I'll try to keep an up-to-date list of the features that are proposed in sy
 
 * Enhanced support for markdown files (from [symbols-tree-view PR #138](https://github.com/xndcn/symbols-tree-view/pull/138)) and for YAML files.
 
-* Support for several languages: R, Elixir, taskpaper, Fountain, Julia, LaTeX, [TypeScript](https://github.com/xndcn/symbols-tree-view/issues/101)
+* Support for several languages: R, Elixir, [taskpaper](https://github.com/xndcn/symbols-tree-view/issues/146), Fountain, Julia, LaTeX, [TypeScript](https://github.com/xndcn/symbols-tree-view/issues/101)
 
 * Bugfix: #148 (from [symbols-tree-view PR #160](https://github.com/xndcn/symbols-tree-view/pull/160))
 
