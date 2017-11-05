@@ -56,6 +56,11 @@ module.exports =
       type: 'string'
       description: 'Here you can specify a path to a binary to use for ctags creation instead of the one shipped with symbols-tree-nav. For instance, Linux users may want to use the binary available for their distribution (exuberant or universal, usually it is /usr/bin/ctags). Caution, if the path you specify is wrong, symbols-tree-nav will not work.'
       default: 'default'
+    zzCtagsOptions:
+      title: 'CtagsOptions'
+      type: 'string'
+      description: 'Here you can specify the ctags options'
+      default: ''
 
 
   symbolsTreeNav: null
