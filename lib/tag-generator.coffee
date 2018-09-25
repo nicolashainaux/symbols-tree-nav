@@ -67,11 +67,8 @@ module.exports =
         command = path.resolve(__dirname, '..', 'vendor', "universal-ctags-#{process.platform}")
       else
         command = path.resolve(atom.config.get('symbols-tree-nav.zzAlternativeCtagsBinary'))
-      customArgs = atom.config.get('symbols-tree-nav.zzCtagsOptions')
       defaultCtagsFile = require.resolve('./.ctags')
       args = ["--options=#{defaultCtagsFile}", '--fields=KsS']
-      if customArgs
-        args.push(customArgs)
 
       if atom.config.get('symbols-view.useEditorGrammarAsCtagsLanguage')
         if language = @getLanguage()

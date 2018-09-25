@@ -1,9 +1,63 @@
 {
-  "name": "symbols-tree-nav",
-  "main": "./lib/main",
-  "version": "0.15.5",
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+        "spec": "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/apm-install-dir-118825-9508-11lzqfi.egupcfpqfr"
+    ]
+  ],
+  "_from": "../d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+  "_id": "symbols-tree-nav@0.15.5",
+  "_inCache": true,
+  "_location": "/symbols-tree-nav",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+    "spec": "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+  "_shasum": "6950eab7bcf0c03bc38e1078eb0cf5e90d7fd46d",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/d-118825-9508-19nrpey.va2e0442t9/package.tgz",
+  "_where": "/private/var/folders/j6/m516k27s30qd_j3t5f455j3r0000gn/T/apm-install-dir-118825-9508-11lzqfi.egupcfpqfr",
+  "bugs": {
+    "url": "https://github.com/nicolashainaux/symbols-tree-nav/issues"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.0.0",
+    "event-kit": "latest",
+    "q": "~1.0.1"
+  },
   "description": "A symbols view like taglist (experimental fork from symbols-tree-view)",
-  "repository": "https://github.com/nicolashainaux/symbols-tree-nav",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "homepage": "https://github.com/nicolashainaux/symbols-tree-nav#readme",
+  "keywords": [
+    "taglist",
+    "tagbar",
+    "symbols"
+  ],
+  "license": "MIT",
+  "main": "./lib/main",
+  "name": "symbols-tree-nav",
+  "optionalDependencies": {},
   "providedServices": {
     "hyperclick.provider": {
       "versions": {
@@ -11,18 +65,11 @@
       }
     }
   },
-  "license": "MIT",
-  "engines": {
-    "atom": ">0.50.0"
+  "readme": "# symbols-tree-nav package\n\nSymbols Tree View for Atom.io, just like taglist or tagbar for VIM.\n\ntag-generator.coffee comes from [atom/symbols-view](http://github.com/atom/symbols-view).\n\n**Caution** If you want to try symbols-tree-nav, you must first disable symbols-tree-view, then install symbols-tree-nav. These two packages should not ne enabled in the same time (they use the same key bindings for instance...). When you want to get back to symbols-tree-view, just disable (or uninstall) symbols-tree-nav and then enable symbols-tree-view again.\n\n**Disclaimer** This is a fork from [symbols-tree-view](https://atom.io/packages/symbols-tree-view). I am not the original author. symbols-tree-nav only offers some more options, but be warned I am no coffee script expert, so they may be experimental! At least, I use this package and it works at home. PR are welcome! Also, new contributors are welcome.\n\nWhenever possible, I'll create a PR on symbols-tree-view to propose a new feature that is included in symbols-tree-nav.\n\n[symbols-tree-view-fix](https://atom.io/packages/symbols-tree-view-fix) is another fork, without any extra options, but fixes for deprecations warnings.\n\n## Extra Settings\nThe ones that are not in symbols-tree-view:\n\n![New settings illustration][new_settings_url]\n\n* `Collapsed By Default` Self-explanatory (default=false)\n\n* `Colors From Syntax Theme` If checked, symbols-tree-nav will try to colorize the entries based on the syntax theme you use. Depending on ctags parser results, this support may be incomplete. Do not hesitate to file an Issue and/or a PR to enhance the support. (default=false)\n\n* `Custom Colors` If checked, symbols-tree-nav will use the colors defined in styles/symbols-tree-nav.less for entries when icons are hidden. See example below. These values should override the syntax theme colors. If you wish to share the same colors both when icons are shown or hidden, then just add these definitions on the same line. (default=false)\n\n\n    .symbols-tree-nav {\n      li.list-item {\n        .custom-function, .custom-method {\n          color: #61afef;\n        }\n      }\n    }\n\n* `Min Titles Length` This is a workaround to be able to see long names that are cut at right. This value is a natural number. When the mouse hover over any element whose length is greater or equal to this value, it will display the complete name as a title. Set it to 0 or 1 to see a title when hovering over any element, or choose the value that's right for your needs. Set it to -1 (default value) to disable this option. (Ref.: [issue #8](https://github.com/nicolashainaux/symbols-tree-nav/issues/8))\n\n* `Show Icons` Self explanatory. If you wish to change the colors, then add entries for `.icon-function`, `.icon-variable` etc. classes in your styles/symbols-tree-nav.less file. (default=true)\n\n* `Show Icons Exceptions` A list of scopes (ex: \"python gfm r\") what be will the exceptions to the main rule of Show Icons. If you let the default value, nothing special will happen. If you turn Show Icons on, then icons will be displayed in all files except the ones matching this scopes' list. If Show Icons is off, then icons will be displayed only in the files matching this scopes' list.\n\n* `AlternativeCtagsBinary` this one is a workaround intended for Linux users since the Linux Universal Ctags binary provided by symbols-tree-view seems to be a little bit buggy (python files are not correctly parsed, for instance). So you can check that another parser is installed on your system (like Exuberant Ctags) and provide its absolute path here. Leave default to keep using the provided binary. (default='default')\n\n## Extra Features (without settings)\nHere I'll try to keep an up-to-date list of the features that are proposed in symbols-tree-nav but not (yet?) in symbols-tree-view. Apart from the features already described in the Extra Settings section above.\n\n* Enhanced support for markdown files (from [symbols-tree-view PR #138](https://github.com/xndcn/symbols-tree-view/pull/138))\n\n* Support for several languages: R, Elixir, taskpaper, Fountain, Julia, LaTeX\n\n* Bugfix: #148 (from [symbols-tree-view PR #160](https://github.com/xndcn/symbols-tree-view/pull/160))\n\n* Bugfix: #79 (from [symbols-tree-view PR #172](https://github.com/xndcn/symbols-tree-view/pull/172))\n\n\n## TO DO (yet unchanged)\n\n* Add specs for test\n\n* Improve icons\n\n[new_settings_url]: https://github.com/nicolashainaux/symbols-tree-nav/blob/master/new_settings.png?raw=true\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicolashainaux/symbols-tree-nav.git"
   },
-  "dependencies": {
-    "atom-space-pen-views": "^2.0.0",
-    "event-kit": "latest",
-    "q": "~1.0.1"
-  },
-  "keywords": [
-    "taglist",
-    "tagbar",
-    "symbols"
-  ]
+  "version": "0.15.5"
 }
