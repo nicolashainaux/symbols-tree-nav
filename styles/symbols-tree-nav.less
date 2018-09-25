@@ -131,3 +131,16 @@
 .symbols-tree-nav .icon-union::before {
   .symbol-icon(symbol-union);
 }
+
+.list-tree.has-collapsable-children li.list-item {
+    margin-left: 18px;
+}
+.list-tree.has-collapsable-children li.list-nested-item > .list-item::before {
+    margin-right: 6px;
+}
+.list-tree.has-collapsable-children li.list-nested-item.selected > .list-item::before {
+        background: rgba(96, 125, 139, 0) !important;
+}
+.selectedParent {
+    background: rgba(96, 125, 139, 0.04);
+}

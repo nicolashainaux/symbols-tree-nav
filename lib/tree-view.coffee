@@ -146,9 +146,9 @@ module.exports =
       @traversal @rootNode, (item) =>
         item.children?.sort (a, b) =>
           if ascending
-            return a.name.localeCompare(b.name)
+            return b.type.localeCompare(a.type) || a.name.localeCompare(b.name);
           else
-            return b.name.localeCompare(a.name)
+            return b.type.localeCompare(a.type) || b.name.localeCompare(b.name);
       @setRoot(@rootNode.item)
 
     sortByRow: (ascending=true) =>
@@ -166,3 +166,10 @@ module.exports =
     select: (item) ->
       @clearSelect()
       item?.view.setSelected()
+      if item?.parent?
+        $parent = item?.view.closest('.list-nested-item')
+        if !$parent.find('div.list-item').first().hasClass('selectedParent')
+          $('.selectedParent').removeClass('selectedParent')
+          $parent.find('div.list-item').first().addClass('selectedParent')
+      else
+        $('.selectedParent').removeClass('selectedParent')
