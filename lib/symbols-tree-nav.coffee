@@ -162,6 +162,11 @@ module.exports =
         @removeEventForEditor()
         @populate()
 
+      #Added onDidOpen to populate while clicking through files in tree view
+      @onChangeEditor = atom.workspace.onDidOpen (editor) =>
+        @removeEventForEditor()
+        @populate()
+
       @onChangeAutoHide = atom.config.observe 'symbols-tree-nav.autoHide', (autoHide) =>
         unless autoHide
           @off('mouseenter mouseleave')

@@ -98,6 +98,7 @@ module.exports =
 
 
   TreeView: class TreeView extends ScrollView
+    @sortByNameType = atom.config.get('symbols-tree-view.sortByNameType')
     @content: ->
       @div class: '-tree-view-', =>
         @ul class: 'list-tree has-collapsable-children', outlet: 'root'
@@ -145,10 +146,16 @@ module.exports =
     sortByName: (ascending=true) =>
       @traversal @rootNode, (item) =>
         item.children?.sort (a, b) =>
-          if ascending
-            return b.type.localeCompare(a.type) || a.name.localeCompare(b.name);
+          if @sortByNameType
+            if ascending
+              return b.type.localeCompare(a.type) || a.name.localeCompare(b.name);
+            else
+              return b.type.localeCompare(a.type) || b.name.localeCompare(b.name);
           else
-            return b.type.localeCompare(a.type) || b.name.localeCompare(b.name);
+              if ascending
+                return a.name.localeCompare(b.name);
+              else
+                return b.name.localeCompare(b.name);
       @setRoot(@rootNode.item)
 
     sortByRow: (ascending=true) =>
