@@ -15,7 +15,9 @@ Whenever possible, I'll create a PR on symbols-tree-view to propose a new featur
 ## Extra Settings
 The ones that are not in symbols-tree-view:
 
-![New settings illustration][new_settings_url]
+* `AutoSort By Name` If this option is enabled then symbols will be sorted by name by default. Credits go to [https://github.com/lowegreg](https://github.com/lowegreg) in [PR #18](https://github.com/nicolashainaux/symbols-tree-nav/pull/18))
+
+* `Sort by name and type` If this option is enabled then sorting by name will also group results by type. Credits go to [https://github.com/lowegreg](https://github.com/lowegreg) in [PR #18](https://github.com/nicolashainaux/symbols-tree-nav/pull/18))
 
 * `Collapsed By Default` Self-explanatory (default=false)
 
@@ -43,9 +45,11 @@ The ones that are not in symbols-tree-view:
 ## Extra Features (without settings)
 Here I'll try to keep an up-to-date list of the features that are proposed in symbols-tree-nav but not (yet?) in symbols-tree-view. Apart from the features already described in the Extra Settings section above.
 
-* Enhanced support for markdown files (from [symbols-tree-view PR #138](https://github.com/xndcn/symbols-tree-view/pull/138))
+* Highlight symbol parent when current element is collapsed and other enhancements (credits go to [https://github.com/lowegreg](https://github.com/lowegreg) in [PR #18](https://github.com/nicolashainaux/symbols-tree-nav/pull/18)).
 
-* Support for several languages: R, Elixir, taskpaper, Fountain, Julia, LaTeX
+* Enhanced support for markdown files (from [symbols-tree-view PR #138](https://github.com/xndcn/symbols-tree-view/pull/138)) and for YAML files.
+
+* Support for several languages: R, Elixir, [taskpaper](https://github.com/xndcn/symbols-tree-view/issues/146), Fountain, Julia, LaTeX, [TypeScript](https://github.com/xndcn/symbols-tree-view/issues/101)
 
 * Bugfix: #148 (from [symbols-tree-view PR #160](https://github.com/xndcn/symbols-tree-view/pull/160))
 
