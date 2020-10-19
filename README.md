@@ -42,6 +42,8 @@ The ones that are not in symbols-tree-view:
 
 * `AlternativeCtagsBinary` this one is a workaround intended for Linux users since the Linux Universal Ctags binary provided by symbols-tree-view seems to be a little bit buggy (python files are not correctly parsed, for instance). So you can check that another parser is installed on your system (like Exuberant Ctags) and provide its absolute path here. Leave default to keep using the provided binary. (default='default')
 
+* `Ctags Options` include ctags options (not sure this works well, this is a merge from [PR #14](https://github.com/nicolashainaux/symbols-tree-nav/pull/14); at least it should be harmless and might be fixed if necessary).
+
 ## Extra Features (without settings)
 Here I'll try to keep an up-to-date list of the features that are proposed in symbols-tree-nav but not (yet?) in symbols-tree-view. Apart from the features already described in the Extra Settings section above.
 
