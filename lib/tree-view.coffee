@@ -145,10 +145,14 @@ module.exports =
     sortByName: (ascending=true) =>
       @traversal @rootNode, (item) =>
         item.children?.sort (a, b) =>
+          typeComp = atom.config.get('symbols-tree-nav.sortByNameType')
+          if typeComp
+            typeComp = b.type.localeCompare(a.type)
           if ascending
-            return a.name.localeCompare(b.name)
+            nameComp = a.name.localeCompare(b.name)
           else
-            return b.name.localeCompare(a.name)
+            nameComp = b.name.localeCompare(a.name)
+          return typeComp || nameComp
       @setRoot(@rootNode.item)
 
     sortByRow: (ascending=true) =>
@@ -166,3 +170,10 @@ module.exports =
     select: (item) ->
       @clearSelect()
       item?.view.setSelected()
+      if item?.parent?
+        $parent = item?.view.closest('.list-nested-item')
+        if !$parent.find('div.list-item').first().hasClass('selectedParent')
+          $('.selectedParent').removeClass('selectedParent')
+          $parent.find('div.list-item').first().addClass('selectedParent')
+      else
+        $('.selectedParent').removeClass('selectedParent')
