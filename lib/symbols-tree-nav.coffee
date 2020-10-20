@@ -113,10 +113,6 @@ module.exports =
       else
         @cachedStatus[editor] = {nowTypeStatus: {}, nowSortStatus: [false]}
         @cachedStatus[editor].nowTypeStatus[type] = true for type in types
-        @sortByNameScopes = atom.config.get('symbols-tree-nav.sortByNameScopes')
-        if @sortByNameScopes.indexOf(@getScopeName()) != -1
-          @cachedStatus[editor].nowSortStatus[0] = true
-          @treeView.sortByName()
         {@nowTypeStatus, @nowSortStatus} = @cachedStatus[editor]
 
       @contextMenu.addMenu(type, @nowTypeStatus[type], toggleTypeVisible) for type in types
@@ -132,7 +128,8 @@ module.exports =
         @focusCurrentCursorTag()
 
         @sortByNameExceptions = atom.config.get('symbols-tree-nav.sortByNameExceptions')
-        if (@autoSortByName and @sortByNameExceptions.indexOf(@getScopeName()) == -1)
+        @sortByNameEnforced = atom.config.get('symbols-tree-nav.sortByNameEnforced')
+        if @sortByNameEnforced.indexOf(@getScopeName()) != -1 or (@autoSortByName and @sortByNameExceptions.indexOf(@getScopeName()) == -1)
           @treeView.sortByName(true)
           @nowSortStatus[0] = true
           @updateContextMenu(types)

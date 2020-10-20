@@ -38,27 +38,27 @@ module.exports =
       default: false
       description: 'If this option is enabled then sorting by name will also group results by type'
       order: 6
+    sortByNameExceptions:
+      type: 'string'
+      description: 'Here you can specify a list of scopes that will NEVER be automatically sorted by name (ex: "source.yaml"), even if Automatically sort by name is checked.'
+      default: ''
+      order: 7
+    sortByNameEnforced:
+      type: 'string'
+      description: 'Here you can specify a list of scopes that will ALWAYS be automatically sorted by name (ex: "source.python"), even if Automatically sort by name is unchecked.'
+      default: ''
+      order: 8
     minTitlesLength:
       type: 'number'
       default: -1
       description: 'Any element having a length greater or equal to this value will display a title when mouse hover over it. Default -1 value means that titles will never be displayed.'
-      order: 7
+      order: 9
     zAutoHideTypes:
       title: 'AutoHideTypes'
       type: 'string'
       description: 'Here you can specify a list of types that will be hidden by default (ex: "variable class")'
-      order: 8
-      default: ''
-    sortByNameExceptions:
-      type: 'string'
-      description: 'Here you can specify a list of scopes that will NOT be sorted by name (ex: "text.html.php")'
-      default: ''
-      order: 9
-    sortByNameScopes:
-      type: 'string'
-      description: 'Here you can specify a list of scopes that will be sorted by name (ex: "text.html.php")'
-      default: ''
       order: 10
+      default: ''
     defaultWidth:
       type: 'number'
       description: 'Width of the panel (needs Atom restart)'
