@@ -53,7 +53,7 @@ Here I'll try to keep an up-to-date list of the features that are proposed in sy
 
 * Highlight symbol parent when current element is collapsed and other enhancements (credits go to [https://github.com/lowegreg](https://github.com/lowegreg) in [PR #18](https://github.com/nicolashainaux/symbols-tree-nav/pull/18)).
 
-* Enhanced support for markdown files (from [symbols-tree-view PR #138](https://github.com/xndcn/symbols-tree-view/pull/138)) and for YAML files.
+* Enhanced support for markdown files (from symbols-tree-view's [PR #176](https://github.com/xndcn/symbols-tree-view/pull/176) and [PR #177](https://github.com/xndcn/symbols-tree-view/pull/177)) and for YAML files.
 
 * Support for several languages: R, [Elixir](https://github.com/xndcn/symbols-tree-view/pull/167), [taskpaper](https://github.com/xndcn/symbols-tree-view/issues/146), Fountain, Julia, LaTeX, [TypeScript](https://github.com/xndcn/symbols-tree-view/issues/101)
 
