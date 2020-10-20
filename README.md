@@ -19,6 +19,10 @@ The ones that are not in symbols-tree-view:
 
 * `Sort by name and type` If this option is enabled then sorting by name will also group results by type. Credits go to [https://github.com/lowegreg](https://github.com/lowegreg) in [PR #18](https://github.com/nicolashainaux/symbols-tree-nav/pull/18))
 
+* `Sort by name exceptions` A list of scopes (e.g. "source.yaml") that will not be automatically sorted by name, even if AutoSort By Name is checked.
+
+* `Sort by name enforced` A list of scopes (e.g. "source.python") that will be automatically sorted by name, even if AutoSort By Name is unchecked.
+
 * `Collapsed By Default` Self-explanatory (default=false)
 
 * `Colors From Syntax Theme` If checked, symbols-tree-nav will try to colorize the entries based on the syntax theme you use. Depending on ctags parser results, this support may be incomplete. Do not hesitate to file an Issue and/or a PR to enhance the support. (default=false)
