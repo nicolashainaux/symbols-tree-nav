@@ -131,7 +131,8 @@ module.exports =
         @updateContextMenu(types)
         @focusCurrentCursorTag()
 
-        if (@autoSortByName)
+        @sortByNameExceptions = atom.config.get('symbols-tree-nav.sortByNameExceptions')
+        if (@autoSortByName and @sortByNameExceptions.indexOf(@getScopeName()) == -1)
           @treeView.sortByName(true)
           @nowSortStatus[0] = true
           @updateContextMenu(types)

@@ -49,48 +49,53 @@ module.exports =
       description: 'Here you can specify a list of types that will be hidden by default (ex: "variable class")'
       order: 8
       default: ''
+    sortByNameExceptions:
+      type: 'string'
+      description: 'Here you can specify a list of scopes that will NOT be sorted by name (ex: "text.html.php")'
+      default: ''
+      order: 9
     sortByNameScopes:
       type: 'string'
       description: 'Here you can specify a list of scopes that will be sorted by name (ex: "text.html.php")'
       default: ''
-      order: 9
+      order: 10
     defaultWidth:
       type: 'number'
       description: 'Width of the panel (needs Atom restart)'
       default: 200
-      order: 10
+      order: 11
     customColors:
       type: 'boolean'
       description: 'Colorize the entries with user-defined values'
       default: false
-      order: 11
+      order: 12
     colorsFromSyntaxTheme:
       type: 'boolean'
       description: 'Colorize the entries, matching syntax theme. (Yet experimental; only partial support)'
       default: false
-      order: 12
+      order: 13
     showIcons:
       type: 'boolean'
       default: true
       description: 'If this option is enabled, then icons will be displayed before each element.'
-      order: 13
+      order: 14
     showIconsExceptions:
       type: 'string'
       description: 'Here you can specify a list of scopes (ex: gfm python r). If Show Icons is on, then icons will not be displayed for the specified scopes; if Show Icons is off, then icons will be displayed only for the specified scopes. Default value will not affect any scope.'
       default: 'default'
-      order: 14
+      order: 15
     zzAlternativeCtagsBinary:
       title: 'AlternativeCtagsBinary'
       type: 'string'
       description: 'Here you can specify a path to a binary to use for ctags creation instead of the one shipped with symbols-tree-nav. For instance, Linux users may want to use the binary available for their distribution (exuberant or universal, usually it is /usr/bin/ctags). Caution, if the path you specify is wrong, symbols-tree-nav will not work.'
       default: 'default'
-      order: 15
+      order: 16
     zzCtagsOptions:
       title: 'CtagsOptions'
       type: 'string'
       description: 'Here you can specify the ctags options'
       default: ''
-      order: 16
+      order: 17
 
   symbolsTreeNav: null
 
